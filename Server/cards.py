@@ -16,7 +16,26 @@ class Card():
             self.priority += 10
         if self.value == 8 and self.suit == "Swords":
             self.priority = 11
+    def get_value(self):
+        """
+        Returns:
+            int: face value of the card
+        """
+        return self.value
 
+    def get_vuit(self):
+        """
+        Returns:
+            string: suit of the card
+        """
+        return self.suit
+
+    def get_priority(self):
+        """
+        Returns:
+            int: priority value of the card
+        """
+        return self.priority               
 class Deck():
     def __init__(self) -> None:
         """
@@ -45,3 +64,6 @@ class Deck():
         for i in range (len(self.cards)-1,0,-1):
             r = random.randint(0 , i)
             self.cards[i]  , self.cards[r] = self.cards[r] , self.cards[i]
+
+    def drawCard(self):
+        return self.cards.pop()

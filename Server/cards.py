@@ -23,7 +23,7 @@ class Card():
         """
         return self.value
 
-    def get_vuit(self):
+    def get_suit(self):
         """
         Returns:
             string: suit of the card

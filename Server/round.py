@@ -26,7 +26,7 @@ class Round():
         """
         list_of_hands = []
         for i in range (self.player_count):
-            for j in range(10):
+            for j in range(40/self.player_count):
                 list_of_hands[i][j] = self.deck.drawCard()
             list_of_hands[i].sort(key = lambda x: x.priority)    
         return list_of_hands
@@ -39,7 +39,7 @@ class Round():
         return self.now_playing_ind
     def increase_playing_index(self):
         self.now_playing_ind += 1
-        if self.now_playing_ind > self.player_count:
+        if self.now_playing_ind > self.player_count - 1:
             self.now_playing_ind = 0
     def play_cards(self, cards_played):
         """
@@ -74,7 +74,7 @@ class Round():
         Handles the case where a player skips their turn
         """
         self.this_turn_skips += 1
-        self.increase_playing_index
+        self.increase_playing_index()
         if self.this_turn_skips == (self.player_count - 1):
             self.this_turn_skips = 0
             self.is_new_turn = True

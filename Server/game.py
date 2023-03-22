@@ -21,8 +21,9 @@ def start_new_round(self):
     """
     self.round = Round(len(self.players), 60)
     list_of_hands = self.round.deal_hands()
-    for i in range(len(self.player)):
-        self.player[i].setHand(list_of_hands[i])
+
+    for i in range(len(self.players)):
+        self.players[i].set_hand(list_of_hands[i])
     
 def play_cards(self, cards_played):
     return self.round.play_cards(cards_played)

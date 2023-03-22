@@ -11,7 +11,9 @@ class Player():
 
     def showHand(self):
         for card in self.hand:
-            card.show()
+            print(card.value)
+            print(" di ")
+            print(card.suit)
 
     def can_skip(self):
         return self.game.round.get_is_new_turn()

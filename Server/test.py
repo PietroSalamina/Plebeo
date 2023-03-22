@@ -7,4 +7,12 @@ if __name__ == "__main__":
     pipo = Player("pipo")
     ListOfPlay = [Bituba, Catta, Savelli, pipo]
     ThisGame = Game(14, ListOfPlay)
-    print(Bituba.hand)
+    #print(len(Bituba.hand))
+    #print(len(Savelli.hand))
+    #print(len(Catta.hand))
+    #print(len(pipo.hand))
+
+    print("Bituba" )
+    Bituba.showHand()
+    print("Savelli" )
+    Savelli.showHand()

@@ -26,9 +26,11 @@ class Round():
         """
         list_of_hands = []
         for i in range (self.player_count):
-            for j in range(40/self.player_count):
-                list_of_hands[i][j] = self.deck.drawCard()
-            list_of_hands[i].sort(key = lambda x: x.priority)    
+            this_hand = []
+            for j in range(40//self.player_count):
+                this_hand.append(self.deck.drawCard())
+            this_hand.sort(key = lambda x: x.priority)    
+            list_of_hands.append(this_hand)
         return list_of_hands
 
     def get_playing_index(self):
@@ -41,6 +43,7 @@ class Round():
         self.now_playing_ind += 1
         if self.now_playing_ind > self.player_count - 1:
             self.now_playing_ind = 0
+
     def play_cards(self, cards_played):
         """
         Verifies wether or not a group of cards is valid to be played and if so updates the last group of played cards

@@ -35,6 +35,8 @@ class Card():
         Returns:
             int: priority value of the card
         """
+        a = 1+1
+        a +=1
         return self.priority               
 class Deck():
     def __init__(self) -> None:

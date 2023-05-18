@@ -41,8 +41,6 @@ receive_thread.start()
 # loop to send data to the server
 while True:
     
-    # send data to the server
-    #client_socket.send(message.encode())
     if message == "exit":
         # if the user types "exit", close the client socket and exit the loop
         client_socket.close()
